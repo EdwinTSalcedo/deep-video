@@ -1,0 +1,31 @@
+# ignore dot files/directories
+.*
+!.gitignore
+
+*.autosave
+*.pyc
+*.user
+*~
+Thumbs.db
+tags
+tegra/
+bin/
+*.sdf
+*.opensdf
+*.obj
+*.stamp
+*.depend
+*.rule
+*.tmp
+*/debug
+*.suo
+*.log
+*.tlog
+build
+node_modules
+CMakeSettings.json
+xcuserdata/
+
+# Mac OS X
+.DS_Store
+__MACOSX

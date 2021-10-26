@@ -4,10 +4,10 @@ import cv2
 from skimage.feature import match_template
 
 # Define the name of the video file
-video = cv2.VideoCapture('ball.mp4')
+video = cv2.VideoCapture('videos/ball.mp4')
 
 # Import the template
-template = cv2.imread('template.jpg')
+template = cv2.imread('images/template.jpg')
 # Convert to grayscale
 template = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
 # Find the shape

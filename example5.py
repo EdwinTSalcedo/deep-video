@@ -7,12 +7,12 @@ from skimage.feature import match_template
 camera = cv2.VideoCapture(0)
 
 # Import the templates
-like = cv2.imread('like.jpeg')
-dislike = cv2.imread('dislike.jpeg')
+like = cv2.imread('images/like.jpeg')
+dislike = cv2.imread('images/dislike.jpeg')
 
 # Import the emojis
-like_emoji = cv2.imread('like_emoji.jpeg')
-dislike_emoji = cv2.imread('dislike_emoji.jpeg')
+like_emoji = cv2.imread('images/like_emoji.jpeg')
+dislike_emoji = cv2.imread('images/dislike_emoji.jpeg')
 
 like = cv2.pyrDown(cv2.pyrDown(like))
 dislike = cv2.pyrDown(cv2.pyrDown(like))

@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 
 # Define the name of the video file
-video = cv2.VideoCapture('ball.mp4')
+video = cv2.VideoCapture('videos/ball.mp4')
 
 print(video.get(0))
 
