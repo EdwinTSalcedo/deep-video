@@ -1,4 +1,4 @@
-# Samples of Video Processing with OpenCV
+# Examples of Video Processing with OpenCV
 
 ## Install Pyenv 
 There are several options to work with independent development enviroments in Python but I personally 
@@ -25,7 +25,7 @@ pip install -r requirements
 ```
 
 ## Install the face landmarks model
-Download the dlib model from [here](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) and uncompress the file with the following command: 
+Download the dlib model from [here](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) and uncompress the file with the next command.
 ```
 bzip2 -d shape_predictor_68_face_landmarks.dat.bz2
 ```
