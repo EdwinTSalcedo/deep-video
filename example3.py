@@ -1,4 +1,4 @@
-# This example captures the image input from a camera
+# This example captures process a saved video 
 import cv2
 import numpy as np 
 
@@ -33,5 +33,5 @@ while(video.isOpened()):
         break
 
 # Close the camera connection and all windows
-camera.release()
+video.release()
 cv2.destroyAllWindows()

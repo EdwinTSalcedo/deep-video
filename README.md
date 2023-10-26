@@ -6,6 +6,12 @@ prefer to use Pyenv. To see how to use this library, see the following links for
 
 To learn more about how to use Pyenv, you can see this RealPython [article](https://realpython.com/intro-to-pyenv/)
 
+After installing Pyenv, you should install Python version 3.7.3 
+
+```
+pyenv install 3.7.3
+```
+
 ## Create a new environment 
 ```
 pyenv virtualenv 3.7.3 video-processing

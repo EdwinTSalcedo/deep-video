@@ -24,13 +24,15 @@ while(video.isOpened()):
     grayscale = cv2.cvtColor(grayscale, cv2.COLOR_BGR2GRAY)
 
     # Find matches using FFTs
-    result = match_template(grayscale, template)
+    result = match_template(grayscale, template) 
 
     cv2.imshow('result',result)
 
     # Find the index of the highest value in the matrix
     ij = np.unravel_index(np.argmax(result), result.shape)
     x, y = ij[::-1]
+    print(ij)
+    print(x,y)
 
     # Draw a rectangle where there is a match
     cv2.rectangle(frame, (x, y), (x+template_cols, y+template_rows), (255,0,0), 2)
@@ -42,6 +44,7 @@ while(video.isOpened()):
     # 0xFF captures a pressed key 'q' so that the video stops
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
 
 # Close the connection with the opened video and close all windows
 video.release()

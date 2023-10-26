@@ -7,13 +7,18 @@ import cv2
 # Define the name of the video file
 video = cv2.VideoCapture('videos/ball.mp4')
 
-print(video.get(0))
+print(video.get(7))
 
+# video_list = []
 # Iterate over all frames in the video
 while(video.isOpened()):
+
     # Read the video frame by frame. the variable ret contains a boolean value which states 
     # if there is a frame or not. 
     ret, frame = video.read()
+
+    if not ret:
+        break
 
     # Convert the frame to grayscale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)

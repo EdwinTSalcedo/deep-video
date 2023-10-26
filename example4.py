@@ -12,8 +12,8 @@ while True:
     ret, frame = camera.read()
 
     # Downsample the image for faster processing
-    frame = cv2.pyrDown(frame)
-    frame = cv2.pyrDown(frame)
+    # frame = cv2.pyrDown(frame)
+    # frame = cv2.pyrDown(frame)
 
     grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 

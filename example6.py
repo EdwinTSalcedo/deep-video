@@ -14,21 +14,24 @@ dislike = cv2.imread('images/dislike.jpeg')
 like_emoji = cv2.imread('images/like_emoji.jpeg')
 dislike_emoji = cv2.imread('images/dislike_emoji.jpeg')
 
-like = cv2.pyrDown(cv2.pyrDown(like))
-dislike = cv2.pyrDown(cv2.pyrDown(like))
-like_emoji = cv2.pyrDown(cv2.pyrDown(like_emoji))
-dislike_emoji = cv2.pyrDown(cv2.pyrDown(dislike_emoji))
+like = cv2.pyrDown(like)
+dislike = cv2.pyrDown(like)
+
+like_emoji = cv2.pyrDown(like_emoji)
+dislike_emoji = cv2.pyrDown(dislike_emoji)
 
 # Convert to grayscale
 like = cv2.cvtColor(like, cv2.COLOR_BGR2GRAY)
+like = cv2.Canny(like, 100, 200)
 dislike = cv2.cvtColor(dislike, cv2.COLOR_BGR2GRAY)
+dislike = cv2.Canny(dislike, 100, 200)
 
 # templates = [like,dislike]
 
 def match_emoji(grayscale, frame, template, emoji):
     result = match_template(grayscale, template)
 
-    threshold = 0.70
+    threshold = 0.30
 
     max_corr = np.max(result)
 
@@ -51,10 +54,11 @@ while True:
     ret, frame = camera.read()
 
     # Downsample the frame for faster processing
-    frame = cv2.pyrDown(cv2.pyrDown(frame))
+    frame = cv2.pyrDown(frame)
 
     # Convert to grayscale
     grayscale = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    grayscale = cv2.Canny(grayscale, 100, 200)
 
     frame = match_emoji(grayscale,frame, like, like_emoji)
     frame = match_emoji(grayscale,frame, dislike, dislike_emoji)

@@ -9,13 +9,13 @@ while True:
 
     # # Downsample the image for faster processing
     frame = cv2.pyrDown(frame)
-    frame = cv2.pyrDown(frame)
+    # frame = cv2.pyrDown(frame)
 
     # Convert to grayscale
     grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Create a binary thresholded image
-    retval, binary = cv2.threshold(grey, 100, 255, cv2.THRESH_BINARY_INV)
+    retval, binary = cv2.threshold(grey, 0, 255, cv2.THRESH_OTSU)
 
     # Find contours from thresholded, binary image
     contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
