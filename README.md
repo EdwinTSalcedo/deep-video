@@ -1,33 +1,31 @@
-# Deep Video
+<h1 align="center">
+  Deep Video
+</h1>
 
 A curated collection of material and tutorials for video processing. 
 
-## Dependencies
+<div align="center">
+  <a href="#installation"><b>Installation</b></a>
+  | <a href="#usage"><b>Usage</b></a>
+  | <a href="#examples"><b>Examples</b></a>
+</div>
+
+## Installation
 
 ### Pyenv
-There are several options to work with virtual enviroments in Python, but I personally prefer to use Pyenv. To see how to install and use this tool, see the following [link](https://github.com/pyenv/pyenv). 
+You need to install [Pyenv](https://github.com/pyenv/pyenv), then run the code below:  
 
-To learn more about how to use Pyenv, you can see this [RealPython article](https://realpython.com/intro-to-pyenv/)
-
-After installing Pyenv, you should install Python version 3.10.3 (This was the lattest Python version tested for the present repo):
-
-```
+```bash
+# Install Python version 3.10.3  (This was the lattest Python version tested for the present repo):
 pyenv install 3.10.3
-```
-Then, create a new environment:
-```
+
+# Create a new environment:
 pyenv virtualenv 3.10.3 deep-video
-```
-If you don't know the Python versions installed on your computer under Pyenv, run the following code: 
-```
-pyenv versions
-```
-Then, activate the environment:
-```
+
+# Activate the environment:
 pyenv activate deep-video
-```
-Finally, install the dependencies:
-```
+
+#Finally, install the dependencies:
 pip install -r requirements
 ```
 
@@ -45,10 +43,14 @@ pip install -r requirements
 
 We will make use of DLib face landmark detection in the examples. 
 
-## Run the experiments
+## Usage
 All examples are implemented in folder `examples`, and you can execute them as follows:
 
 ```
 python exampleX.py
 ```
 where X is the number of experiment. 
+
+## Examples
+* [Open Video](examples/example1.py)
+
