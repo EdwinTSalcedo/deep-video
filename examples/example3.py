@@ -3,7 +3,7 @@ import cv2
 import numpy as np 
 
 # Define the input camera
-video = cv2.VideoCapture('videos/laguna-colorada.mp4')
+video = cv2.VideoCapture('../videos/laguna-colorada.mp4')
 fps = video.get(cv2.CAP_PROP_FPS)
 
 while(video.isOpened()):

@@ -1,42 +1,54 @@
-# Examples of Video Processing with OpenCV
+# Deep Video
 
-## Install Pyenv 
-There are several options to work with independent development enviroments in Python but I personally 
-prefer to use Pyenv. To see how to use this library, see the following links for [Windows](https://github.com/pyenv-win/pyenv-win) & [Linux](https://github.com/pyenv/pyenv). 
+A curated collection of material and tutorials for video processing. 
 
-To learn more about how to use Pyenv, you can see this RealPython [article](https://realpython.com/intro-to-pyenv/)
+## Dependencies
 
-After installing Pyenv, you should install Python version 3.7.3 
+### Pyenv
+There are several options to work with virtual enviroments in Python, but I personally prefer to use Pyenv. To see how to install and use this tool, see the following [link](https://github.com/pyenv/pyenv). 
+
+To learn more about how to use Pyenv, you can see this [RealPython article](https://realpython.com/intro-to-pyenv/)
+
+After installing Pyenv, you should install Python version 3.10.3 (This was the lattest Python version tested for the present repo):
 
 ```
-pyenv install 3.7.3
+pyenv install 3.10.3
 ```
-
-## Create a new environment 
+Then, create a new environment:
 ```
-pyenv virtualenv 3.7.3 video-processing
+pyenv virtualenv 3.10.3 deep-video
 ```
-If you don't know the Python version installed on your computer, run the following code. 
+If you don't know the Python versions installed on your computer under Pyenv, run the following code: 
 ```
 pyenv versions
 ```
-Activate the environment
+Then, activate the environment:
 ```
-python activate video-processing
+pyenv activate deep-video
 ```
-
-## Install dependencies
+Finally, install the dependencies:
 ```
 pip install -r requirements
 ```
 
-## Install the face landmarks model
-Download the dlib model from [here](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) and uncompress the file with the next command.
-```
-bzip2 -d shape_predictor_68_face_landmarks.dat.bz2
-```
+### ML dependencies
+
+#### DLib
+[Dlib](http://dlib.net/) is a cutting-edge C++ toolkit that includes tools and pre-trained ML models. Numerous fields, including robotics, embedded devices, and mobile phones, employ it in both industry and academia. Dlib is freely applicable in any application due to its open source licencing. As for image processing, Dlib counts on the following tools: 
+- Image Processing
+- Routines for reading and writing common image formats.
+- Automatic color space conversion between various pixel types
+- Common image operations such as edge finding and morphological operations
+- Implementations of the SURF, HOG, and FHOG feature extraction algorithms.
+- Tools for detecting objects in images including frontal face detection and object pose estimation.
+- High quality face recognition
+
+We will make use of DLib face landmark detection in the examples. 
 
 ## Run the experiments
+All examples are implemented in folder `examples`, and you can execute them as follows:
+
 ```
-python example1.py
+python exampleX.py
 ```
+where X is the number of experiment. 

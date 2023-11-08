@@ -2,10 +2,10 @@
 import dlib
 import cv2
 
-detector = 'shape_predictor_68_face_landmarks.dat'
+detector = '../models/shape_predictor_68_face_landmarks.dat'
 detector = dlib.shape_predictor(detector)
 face_detector = dlib.get_frontal_face_detector()
-mostacho = cv2.imread('images/mostacho.png', cv2.IMREAD_UNCHANGED)
+mostacho = cv2.imread('../images/mostacho.png', cv2.IMREAD_UNCHANGED)
 
 cap = cv2.VideoCapture(0)
 
