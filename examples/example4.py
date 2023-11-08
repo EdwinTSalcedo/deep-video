@@ -1,6 +1,6 @@
 
 
-# This example captures the image input from a camera
+# This example captures the input stream from a camera
 import cv2
 import numpy as np 
 

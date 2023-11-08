@@ -1,5 +1,3 @@
-# IMPORTANT: Install opencv with 'pip install opencv-python'
-
 # This example explains how to open a video located in the same directory 
 import numpy as np
 import cv2

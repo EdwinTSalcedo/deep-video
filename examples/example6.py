@@ -1,74 +1,39 @@
-# This example captures the image input from a camera
+# This example finds 68 face landmarks and show them 
+import dlib
 import cv2
-import numpy as np 
-from skimage.feature import match_template
 
-# Define the input camera
-camera = cv2.VideoCapture(0)
+detector = '../models/shape_predictor_68_face_landmarks.dat'
+detector = dlib.shape_predictor(detector)
+face_detector = dlib.get_frontal_face_detector()
+mostacho = cv2.imread('../images/mostacho.png', cv2.IMREAD_UNCHANGED)
 
-# Import the templates
-like = cv2.imread('../images/like.jpeg')
-dislike = cv2.imread('../images/dislike.jpeg')
+cap = cv2.VideoCapture(0)
 
-# Import the emojis
-like_emoji = cv2.imread('../images/like_emoji.jpeg')
-dislike_emoji = cv2.imread('../images/dislike_emoji.jpeg')
-
-like = cv2.pyrDown(like)
-dislike = cv2.pyrDown(like)
-
-like_emoji = cv2.pyrDown(like_emoji)
-dislike_emoji = cv2.pyrDown(dislike_emoji)
-
-# Convert to grayscale
-like = cv2.cvtColor(like, cv2.COLOR_BGR2GRAY)
-like = cv2.Canny(like, 100, 200)
-dislike = cv2.cvtColor(dislike, cv2.COLOR_BGR2GRAY)
-dislike = cv2.Canny(dislike, 100, 200)
-
-# templates = [like,dislike]
-
-def match_emoji(grayscale, frame, template, emoji):
-    result = match_template(grayscale, template)
-
-    threshold = 0.30
-
-    max_corr = np.max(result)
-
-    if max_corr > threshold:
-        # Find the index of the highest value in the matrix
-        ij = np.unravel_index(np.argmax(result), result.shape)
-        x, y = ij[::-1]
-
-        # Find the template's shape
-        template_rows, template_cols = template.shape
-
-        # Define position for the emojis
-        x_offset=y_offset=20
-
-        frame[y_offset:y_offset+emoji.shape[0], x_offset:x_offset+emoji.shape[1]] = emoji
-    
-    return frame
-
-while True: 
-    ret, frame = camera.read()
-
-    # Downsample the frame for faster processing
+while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
     frame = cv2.pyrDown(frame)
+    frame = cv2.flip(frame, 1)
 
-    # Convert to grayscale
-    grayscale = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    grayscale = cv2.Canny(grayscale, 100, 200)
+    img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    detections = face_detector(img)
 
-    frame = match_emoji(grayscale,frame, like, like_emoji)
-    frame = match_emoji(grayscale,frame, dislike, dislike_emoji)
+    for detection in detections:
+        x1, y1, x2, y2 = detection.left(), detection.top(), detection.right(), detection.bottom()
 
-    # Display the frame
-    cv2.imshow('frame',frame)
+        landmarks = detector(img, detection)
+        landmarks_list = list(map(lambda p: (p.x, p.y), landmarks.parts()))
 
+        for x, y in landmarks_list:
+            cv2.circle(img, (x, y), 2, (255, 0, 0), -1)
+
+    frame = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+
+    # Display the resulting frame
+    cv2.imshow('frame', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Close the camera connection and all windows
+# When everything's done, release the capture
 cap.release()
 cv2.destroyAllWindows()

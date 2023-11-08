@@ -1,4 +1,4 @@
-# This example captures process a saved video 
+# This example processes a saved video 
 import cv2
 import numpy as np 
 

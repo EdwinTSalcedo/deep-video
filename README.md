@@ -47,10 +47,16 @@ We will make use of DLib face landmark detection in the examples.
 All examples are implemented in folder `examples`, and you can execute them as follows:
 
 ```
-python exampleX.py
+python examples/exampleX.py
 ```
 where X is the number of experiment. 
 
 ## Examples
-* [Open Video](examples/example1.py)
+* [Open a video and show its properties](examples/example1.py)
+* [Detect object with skimage.feature.match_template](examples/example2.py)
+* [Detect edges and overlap them on the base video ](examples/example3.py)
+* [Capture and show the camera input](examples/example4.py)
+* [Show contours on the camera input](examples/example5.py)
+* [Find and show face landmarks](examples/example6.py)
+* [Show a mostacho over a face captured by the camera](examples/example7.py)
 
