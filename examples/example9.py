@@ -3,6 +3,8 @@ import cv2
 import pandas as pd
 
 # Load model
+# Check the documentation if you need
+# to load a different model: https://docs.ultralytics.com/tasks/detect/
 model = YOLO('../models/yolov8n.pt')
 
 # Define the input camera
