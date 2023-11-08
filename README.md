@@ -49,14 +49,16 @@ All examples are implemented in folder `examples`, and you can execute them as f
 ```
 python examples/exampleX.py
 ```
-where X is the number of experiment. 
+where X is the number of the experiment. 
 
 ## Examples
-* [Open a video and show its properties](examples/example1.py)
-* [Detect object with skimage.feature.match_template](examples/example2.py)
-* [Detect edges and overlap them on the base video ](examples/example3.py)
-* [Capture and show the camera input](examples/example4.py)
-* [Show contours on the camera input](examples/example5.py)
-* [Find and show face landmarks](examples/example6.py)
-* [Show a mostacho over a face captured by the camera](examples/example7.py)
+* [1. Open a video and show its properties](examples/example1.py)
+* [2. Detect object with skimage.feature.match_template](examples/example2.py)
+* [3. Detect edges and overlap them on the base video ](examples/example3.py)
+* [4. Capture and show the camera input](examples/example4.py)
+* [5. Show contours on the camera input](examples/example5.py)
+* [6. Find and show face landmarks](examples/example6.py)
+* [7. Show a mostacho over a face captured by the camera](examples/example7.py)
+* [8. Implement Yolov5 object detector](examples/example8.py)
+* [9. Implement Yolov8 object detector](examples/example9.py)
 
