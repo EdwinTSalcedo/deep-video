@@ -43,6 +43,9 @@ pip install -r requirements
 
 We will make use of DLib face landmark detection in the examples. 
 
+#### Yolo
+[Yolo](https://docs.ultralytics.com/) is an algorithm that uses neural networks to provide real-time object detection. This algorithm is popular because of its speed and accuracy. Moreover, its 5th and 8th versions have good documentation for easy deployment on embedded devices. 
+
 ## Usage
 All examples are implemented in folder `examples`, and you can execute them as follows:
 
@@ -61,4 +64,6 @@ where X is the number of the experiment.
 * [7. Show a mostacho over a face captured by the camera](examples/example7.py)
 * [8. Implement Yolov5 object detector](examples/example8.py)
 * [9. Implement Yolov8 object detector](examples/example9.py)
+
+
 

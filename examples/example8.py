@@ -4,7 +4,7 @@ import cv2
 # Check if Yolov5 is available on the computer
 # torch.cuda.is_available()
 
-# Load model
+# Load model. Note that ultralytics/yolov5:v7.0 defines a pinned Yolov5 version available on the PyTorch Hub. 
 # model = torch.hub.load('ultralytics/yolov5:v7.0', 'yolov5m')  # or yolov5m, yolov5l, yolov5x, etc.
 model = torch.hub.load('ultralytics/yolov5:v7.0', 'custom', '../models/yolov5m.pt')  # custom trained model
 

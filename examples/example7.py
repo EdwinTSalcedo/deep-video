@@ -22,6 +22,7 @@ while(True):
     frame = cv2.pyrDown(frame)
     frame = cv2.flip(frame, 1)
     
+    # Try to detect landmarks, otherwise, continue with the next frame
     try:
         img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         detections = face_detector(img)
