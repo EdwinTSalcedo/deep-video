@@ -5,8 +5,8 @@ import cv2
 # torch.cuda.is_available()
 
 # Load model
-# model = torch.hub.load('ultralytics/yolov5', 'yolov5m')  # or yolov5m, yolov5l, yolov5x, etc.
-model = torch.hub.load('ultralytics/yolov5', 'custom', '../models/yolov5m.pt')  # custom trained model
+# model = torch.hub.load('ultralytics/yolov5:v7.0', 'yolov5m')  # or yolov5m, yolov5l, yolov5x, etc.
+model = torch.hub.load('ultralytics/yolov5:v7.0', 'custom', '../models/yolov5m.pt')  # custom trained model
 
 # Define the input camera
 camera = cv2.VideoCapture(0)
