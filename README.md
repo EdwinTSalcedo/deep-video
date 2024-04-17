@@ -26,7 +26,7 @@ pyenv virtualenv 3.10.3 deep-video
 pyenv activate deep-video
 
 #Finally, install the dependencies:
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ### ML dependencies
